@@ -58,7 +58,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare for segue: \(segue.identifier)")
+        print("prepare for segue: \(segue.identifier ?? "error")")
         if(segue.destination is DetailController){
             let destination = segue.destination as! DetailController
             if let selectedIndexPath = selectedIndexPath, let color = color{
@@ -68,8 +68,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
     }
     
+
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        tableView.reloadData()
+        print("trait change on table view")
+        
+//        tableView.beginUpdates()
+//        tableView.endUpdates()
+//        tableView.layoutIfNeeded()
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,8 +98,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.frame = tableView.bounds
         cell.layoutIfNeeded()
         cell.setDataForCollectionView(data: model.source[indexPath.row].info,row: indexPath.row)
-        cell.verticalConstraint.constant = cell.collectionView.collectionViewLayout.collectionViewContentSize.height
         
+        cell.verticalConstraint.constant = cell.collectionView.collectionViewLayout.collectionViewContentSize.height
+        print("set cell")
         return cell
         
     }

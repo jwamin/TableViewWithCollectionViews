@@ -13,7 +13,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     
     @IBOutlet weak var collectionView: CellCollectionView!
     var delegate:CellUpdateProtocolDelegate?
- 
+    
     @IBOutlet weak var verticalConstraint: NSLayoutConstraint!
     
     private var data:[String] = [] {
@@ -35,7 +35,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
         return data.count
     }
     
- 
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         func randomColor()->CGFloat{
@@ -55,7 +55,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     
     override func prepareForReuse() {
         
-
+        
     }
     
     deinit {
@@ -64,27 +64,29 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        collectionView.reloadData()
-        setNeedsLayout()
+        print("trait change on collection view")
+        
+        collectionView.collectionViewLayout.invalidateLayout()
+        
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-  
+        
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 0)
-        collectionView.layoutIfNeeded()
+//        collectionView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 0)
+//        collectionView.layoutIfNeeded()
         
         //heightConstraint.isActive = false
         
         //register reuse identifier for use when dequeuing collection view cell (with external nib)
         collectionView.register(RowCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
