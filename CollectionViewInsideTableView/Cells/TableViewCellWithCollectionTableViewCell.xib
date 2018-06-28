@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="418" height="164"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="164" id="MIQ-IW-gFK"/>
+                            <constraint firstAttribute="height" priority="999" constant="164" id="MIQ-IW-gFK"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="rJp-5F-K67">
                             <size key="itemSize" width="50" height="50"/>
@@ -34,10 +34,10 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="cOx-XO-7JP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Dwv-Hg-NcF"/>
-                    <constraint firstAttribute="trailing" secondItem="cOx-XO-7JP" secondAttribute="trailing" id="RoS-ZI-VzE"/>
-                    <constraint firstItem="cOx-XO-7JP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XcU-1G-L6r"/>
-                    <constraint firstAttribute="bottom" secondItem="cOx-XO-7JP" secondAttribute="bottom" id="bL0-CL-4Ae"/>
+                    <constraint firstAttribute="bottom" secondItem="cOx-XO-7JP" secondAttribute="bottom" id="NNB-2U-IcL"/>
+                    <constraint firstItem="cOx-XO-7JP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OJE-O7-Hzz"/>
+                    <constraint firstItem="cOx-XO-7JP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SHM-xm-qTM"/>
+                    <constraint firstAttribute="trailing" secondItem="cOx-XO-7JP" secondAttribute="trailing" id="wge-0M-IBW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
