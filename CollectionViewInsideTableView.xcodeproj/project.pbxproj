@@ -16,9 +16,6 @@
 		3D22C60120E51F0D00D63E52 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D22C60020E51F0D00D63E52 /* model.swift */; };
 		3D22C60820E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D22C60620E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.swift */; };
 		3D22C60920E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D22C60720E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.xib */; };
-		3D22C60C20E524A300D63E52 /* CellCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D22C60B20E524A300D63E52 /* CellCollectionView.swift */; };
-		3D22C60F20E5253100D63E52 /* RowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D22C60D20E5253100D63E52 /* RowCollectionViewCell.swift */; };
-		3D22C61020E5253100D63E52 /* RowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D22C60E20E5253100D63E52 /* RowCollectionViewCell.xib */; };
 		3D22C61220E5411900D63E52 /* CellUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D22C61120E5411900D63E52 /* CellUpdateProtocol.swift */; };
 		3D6129B820E56864006DF36C /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6129B720E56864006DF36C /* DetailController.swift */; };
 		3D6129BA20E56D59006DF36C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6129B920E56D59006DF36C /* Helpers.swift */; };
@@ -36,9 +33,6 @@
 		3D22C60020E51F0D00D63E52 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		3D22C60620E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		3D22C60720E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellWithCollectionTableViewCell.xib; sourceTree = "<group>"; };
-		3D22C60B20E524A300D63E52 /* CellCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionView.swift; sourceTree = "<group>"; };
-		3D22C60D20E5253100D63E52 /* RowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCollectionViewCell.swift; sourceTree = "<group>"; };
-		3D22C60E20E5253100D63E52 /* RowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowCollectionViewCell.xib; sourceTree = "<group>"; };
 		3D22C61120E5411900D63E52 /* CellUpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellUpdateProtocol.swift; sourceTree = "<group>"; };
 		3D6129B720E56864006DF36C /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		3D6129B920E56D59006DF36C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -55,6 +49,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D18003B20E67954008DECD3 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D22C5EE20E51DC400D63E52 /* ViewController.swift */,
+				3D6129B720E56864006DF36C /* DetailController.swift */,
+				3D22C5F020E51DC400D63E52 /* Main.storyboard */,
+			);
+			name = "Main Views";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		3D18003C20E67A18008DECD3 /* Models and Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3D22C60020E51F0D00D63E52 /* model.swift */,
+				3D6129B920E56D59006DF36C /* Helpers.swift */,
+				3D22C5FE20E51F0400D63E52 /* data.swift */,
+			);
+			path = "Models and Helpers";
+			sourceTree = "<group>";
+		};
 		3D22C5E020E51DC400D63E52 = {
 			isa = PBXGroup;
 			children = (
@@ -75,13 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				3D22C5EC20E51DC400D63E52 /* AppDelegate.swift */,
-				3D22C5EE20E51DC400D63E52 /* ViewController.swift */,
-				3D6129B920E56D59006DF36C /* Helpers.swift */,
-				3D22C5F020E51DC400D63E52 /* Main.storyboard */,
-				3D6129B720E56864006DF36C /* DetailController.swift */,
+				3D18003B20E67954008DECD3 /* Main Views */,
 				3D22C60A20E51F8A00D63E52 /* Cells */,
-				3D22C5FE20E51F0400D63E52 /* data.swift */,
-				3D22C60020E51F0D00D63E52 /* model.swift */,
+				3D18003C20E67A18008DECD3 /* Models and Helpers */,
 				3D22C5F320E51DC500D63E52 /* Assets.xcassets */,
 				3D22C5F520E51DC500D63E52 /* LaunchScreen.storyboard */,
 				3D22C5F820E51DC500D63E52 /* Info.plist */,
@@ -94,10 +105,7 @@
 			children = (
 				3D22C60620E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.swift */,
 				3D22C60720E51F7F00D63E52 /* TableViewCellWithCollectionTableViewCell.xib */,
-				3D22C60D20E5253100D63E52 /* RowCollectionViewCell.swift */,
 				3D22C61120E5411900D63E52 /* CellUpdateProtocol.swift */,
-				3D22C60E20E5253100D63E52 /* RowCollectionViewCell.xib */,
-				3D22C60B20E524A300D63E52 /* CellCollectionView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -160,7 +168,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D22C61020E5253100D63E52 /* RowCollectionViewCell.xib in Resources */,
 				3D22C5F720E51DC500D63E52 /* LaunchScreen.storyboard in Resources */,
 				3D22C5F420E51DC500D63E52 /* Assets.xcassets in Resources */,
 				3D22C5F220E51DC400D63E52 /* Main.storyboard in Resources */,
@@ -176,11 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D22C61220E5411900D63E52 /* CellUpdateProtocol.swift in Sources */,
-				3D22C60F20E5253100D63E52 /* RowCollectionViewCell.swift in Sources */,
 				3D22C5EF20E51DC400D63E52 /* ViewController.swift in Sources */,
 				3D6129BA20E56D59006DF36C /* Helpers.swift in Sources */,
 				3D22C5FF20E51F0400D63E52 /* data.swift in Sources */,
-				3D22C60C20E524A300D63E52 /* CellCollectionView.swift in Sources */,
 				3D22C5ED20E51DC400D63E52 /* AppDelegate.swift in Sources */,
 				3D22C60120E51F0D00D63E52 /* model.swift in Sources */,
 				3D6129B820E56864006DF36C /* DetailController.swift in Sources */,

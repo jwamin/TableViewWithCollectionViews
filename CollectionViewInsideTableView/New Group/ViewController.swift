@@ -47,7 +47,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let cell = tableView.cellForRow(at: IndexPath(row: indexpath.section, section: 0)) as! TableViewCellWithCollectionTableViewCell
         
-        let collectioncell = cell.collectionView.cellForItem(at: IndexPath(row: indexpath.row, section: 0)) as! RowCollectionViewCell
+        let collectioncell = cell.collectionView.cellForItem(at: IndexPath(row: indexpath.row, section: 0))!
         
         color=collectioncell.backgroundColor
         selectedIndexPath = indexpath

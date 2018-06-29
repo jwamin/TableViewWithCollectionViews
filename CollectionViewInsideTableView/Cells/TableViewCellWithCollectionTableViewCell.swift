@@ -11,7 +11,7 @@ import UIKit
 class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource {
     
     
-    @IBOutlet weak var collectionView: CellCollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     var delegate:CellUpdateProtocolDelegate?
     
     @IBOutlet weak var verticalConstraint: NSLayoutConstraint!
@@ -81,7 +81,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
         //heightConstraint.isActive = false
         
         //register reuse identifier for use when dequeuing collection view cell (with external nib)
-        collectionView.register(RowCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
