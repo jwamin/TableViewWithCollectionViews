@@ -25,7 +25,7 @@
                         <constraints>
                             <constraint firstAttribute="height" priority="999" constant="164" id="MIQ-IW-gFK"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="rJp-5F-K67">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="rJp-5F-K67" customClass="FlowLayout" customModule="CollectionViewInsideTableView" customModuleProvider="target">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>

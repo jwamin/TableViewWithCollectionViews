@@ -12,13 +12,15 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var verticalConstraint: NSLayoutConstraint!
+    
+    //wow, so ARC cleans up this constraint when it is inactive, make it strong
+    @IBOutlet var verticalConstraint: NSLayoutConstraint!
     
     var delegate:CellUpdateProtocolDelegate?
     
     private var data:[UIColor] = [] {
         didSet{
-            print("reloading data")
+//            print("reloading data")
             collectionView.reloadData()
         }
     }
@@ -61,10 +63,8 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        print("trait change on collection view")
-        
-        //collectionView.collectionViewLayout.invalidateLayout()
-        
+        super.traitCollectionDidChange(previousTraitCollection)
+
     }
     
     override func awakeFromNib() {
@@ -72,8 +72,6 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        //heightConstraint.isActive = false
         
         //register reuse identifier for use when dequeuing collection view cell (with external nib)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")

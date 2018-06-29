@@ -71,11 +71,13 @@ class MasterViewController: UIViewController,UITableViewDelegate,UITableViewData
 
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        print("trait change on table view")
+        super.traitCollectionDidChange(previousTraitCollection)
         
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
-//        tableView.layoutIfNeeded()
+        let sizeClass = (traitCollection.horizontalSizeClass.rawValue==1) ? "portrait" : "landscape"
+        
+        print("trait change on table view", sizeClass)
+        
+        //tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -96,11 +98,14 @@ class MasterViewController: UIViewController,UITableViewDelegate,UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCellWithCollectionTableViewCell
         cell.delegate = self
         cell.frame = tableView.bounds
+        
         cell.layoutIfNeeded()
         cell.setDataForCollectionView(data: model.colorStruct[indexPath.row].colArray,row: indexPath.row)
         
+        cell.verticalConstraint.isActive = true
         cell.verticalConstraint.constant = cell.collectionView.collectionViewLayout.collectionViewContentSize.height
-        print("set cell")
+        print("cell layout \(indexPath.row)",tableView.bounds.width,cell.collectionView.collectionViewLayout.collectionViewContentSize.height)
+        //print("set cell")
         return cell
         
     }

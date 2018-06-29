@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1E58FA20E689E70076DA9F /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E58F920E689E70076DA9F /* FlowLayout.swift */; };
 		3D22C5ED20E51DC400D63E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D22C5EC20E51DC400D63E52 /* AppDelegate.swift */; };
 		3D22C5EF20E51DC400D63E52 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D22C5EE20E51DC400D63E52 /* MasterViewController.swift */; };
 		3D22C5F220E51DC400D63E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D22C5F020E51DC400D63E52 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D1E58F920E689E70076DA9F /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		3D22C5E920E51DC400D63E52 /* CollectionViewInsideTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewInsideTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D22C5EC20E51DC400D63E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D22C5EE20E51DC400D63E52 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = "Models and Helpers";
 			sourceTree = "<group>";
 		};
+		3D1E58F820E689B70076DA9F /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				3D1E58F920E689E70076DA9F /* FlowLayout.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		3D22C5E020E51DC400D63E52 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				3D22C5EC20E51DC400D63E52 /* AppDelegate.swift */,
 				3D18003B20E67954008DECD3 /* Main Views */,
 				3D22C60A20E51F8A00D63E52 /* Cells */,
+				3D1E58F820E689B70076DA9F /* Flow */,
 				3D18003C20E67A18008DECD3 /* Models and Helpers */,
 				3D22C5F320E51DC500D63E52 /* Assets.xcassets */,
 				3D22C5F520E51DC500D63E52 /* LaunchScreen.storyboard */,
@@ -185,6 +196,7 @@
 				3D22C5EF20E51DC400D63E52 /* MasterViewController.swift in Sources */,
 				3D6129BA20E56D59006DF36C /* helpers.swift in Sources */,
 				3D22C5FF20E51F0400D63E52 /* data.swift in Sources */,
+				3D1E58FA20E689E70076DA9F /* FlowLayout.swift in Sources */,
 				3D22C5ED20E51DC400D63E52 /* AppDelegate.swift in Sources */,
 				3D22C60120E51F0D00D63E52 /* model.swift in Sources */,
 				3D6129B820E56864006DF36C /* DetailController.swift in Sources */,
