@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 func getComplementaryForColor(color: UIColor) -> UIColor {
     
     let ciColor = CIColor(color: color)
@@ -17,4 +18,9 @@ func getComplementaryForColor(color: UIColor) -> UIColor {
     let compBlue: CGFloat = 1.0 - ciColor.blue
     
     return UIColor(red: compRed, green: compGreen, blue: compBlue, alpha: 1.0)
+}
+
+func randomColor()->CGFloat{
+    let random = CGFloat(arc4random_uniform(255))
+    return CGFloat(random/255)
 }

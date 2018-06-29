@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,CellUpdateProtocolDelegate {
+class MasterViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,CellUpdateProtocolDelegate {
     
     var tableView:UITableView!
     var model:Model!
@@ -97,7 +97,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.delegate = self
         cell.frame = tableView.bounds
         cell.layoutIfNeeded()
-        cell.setDataForCollectionView(data: model.source[indexPath.row].info,row: indexPath.row)
+        cell.setDataForCollectionView(data: model.colorStruct[indexPath.row].colArray,row: indexPath.row)
         
         cell.verticalConstraint.constant = cell.collectionView.collectionViewLayout.collectionViewContentSize.height
         print("set cell")

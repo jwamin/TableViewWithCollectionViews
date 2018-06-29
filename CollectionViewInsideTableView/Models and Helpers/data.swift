@@ -6,7 +6,7 @@
 //  Copyright © 2018 Joss Manger. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let info = """
 [
@@ -57,4 +57,8 @@ let info = """
 
 struct DataSource : Codable {
     let info:[String]
+}
+
+struct Colors {
+    let colArray:[UIColor]
 }

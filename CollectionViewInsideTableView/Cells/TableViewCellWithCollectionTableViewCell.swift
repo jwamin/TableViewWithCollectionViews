@@ -12,11 +12,11 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var delegate:CellUpdateProtocolDelegate?
-    
     @IBOutlet weak var verticalConstraint: NSLayoutConstraint!
     
-    private var data:[String] = [] {
+    var delegate:CellUpdateProtocolDelegate?
+    
+    private var data:[UIColor] = [] {
         didSet{
             print("reloading data")
             collectionView.reloadData()
@@ -26,7 +26,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     //dubious, cell shouldnt know its own row, but makes things simple
     private var row:Int = 0
     
-    func setDataForCollectionView(data:[String],row:Int){
+    func setDataForCollectionView(data:[UIColor],row:Int){
         self.data = data
         self.row = row
     }
@@ -38,13 +38,10 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        func randomColor()->CGFloat{
-            let random = CGFloat(arc4random_uniform(255))
-            return CGFloat(random/255)
-        }
+    
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
-        cell.backgroundColor = UIColor(red: randomColor(), green: randomColor(), blue: randomColor(), alpha: 1.0)
+        cell.backgroundColor = data[indexPath.row]
         return cell
     }
     
@@ -66,7 +63,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         print("trait change on collection view")
         
-        collectionView.collectionViewLayout.invalidateLayout()
+        //collectionView.collectionViewLayout.invalidateLayout()
         
     }
     
@@ -75,13 +72,12 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
         
         collectionView.dataSource = self
         collectionView.delegate = self
-//        collectionView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 0)
-//        collectionView.layoutIfNeeded()
         
         //heightConstraint.isActive = false
         
         //register reuse identifier for use when dequeuing collection view cell (with external nib)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
