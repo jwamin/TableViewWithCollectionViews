@@ -20,7 +20,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     
     private var data:[UIColor] = [] {
         didSet{
-//            print("reloading data")
+            //definitely need this property observer to reload data, data is added after anstantiation
             collectionView.reloadData()
         }
     }
@@ -39,9 +39,6 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-    
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
         cell.backgroundColor = data[indexPath.row]
         return cell
@@ -53,18 +50,21 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
     }
     
     override func prepareForReuse() {
+        print("reusing \(row)")
+        verticalConstraint.isActive = false
         
-        
-    }
-    
-    deinit {
-        print("deinit")
-        self.delegate = nil
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-
+        
+        print("vertical constraint \(verticalConstraint.constant) \(row)")
+    }
+    
+    deinit {
+        print("deinit")
+        verticalConstraint.isActive = false
+        self.delegate = nil
     }
     
     override func awakeFromNib() {
