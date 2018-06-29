@@ -77,10 +77,11 @@ class MasterViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         print("trait change on table view", sizeClass)
         
-        //tableView.reloadData()
+        
     }
     
     override func viewWillLayoutSubviews() {
+        //print("will layout tableview")
         tableView.reloadData()
     }
     
@@ -100,16 +101,16 @@ class MasterViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCellWithCollectionTableViewCell
+        cell.setDataForCollectionView(data: model.colorStruct[indexPath.row].colArray,row: indexPath.row)
         cell.delegate = self
         cell.frame = tableView.bounds
-        
         cell.layoutIfNeeded()
-        cell.setDataForCollectionView(data: model.colorStruct[indexPath.row].colArray,row: indexPath.row)
-        
         cell.verticalConstraint.isActive = true
         cell.verticalConstraint.constant = cell.collectionView.collectionViewLayout.collectionViewContentSize.height
-        print("cell layout \(indexPath.row)",tableView.bounds.width,cell.collectionView.collectionViewLayout.collectionViewContentSize.height)
+        
+        //print("cell layout \(indexPath.row)",tableView.bounds.width,cell.collectionView.collectionViewLayout.collectionViewContentSize.height)
         //print("set cell")
+        
         return cell
         
     }

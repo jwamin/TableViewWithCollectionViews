@@ -22,6 +22,7 @@ class TableViewCellWithCollectionTableViewCell: UITableViewCell,UICollectionView
         didSet{
             //definitely need this property observer to reload data, data is added after anstantiation
             collectionView.reloadData()
+            delegate?.collectionViewFinished()
         }
     }
     
