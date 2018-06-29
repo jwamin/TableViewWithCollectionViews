@@ -11,12 +11,18 @@ import UIKit
 class MasterViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,CellUpdateProtocolDelegate {
     
     var tableView:UITableView!
-    var model:Model!
+    var model:Model! {
+        didSet{
+            if(tableView != nil){
+                tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        model = Model()
+        regenerateModel()
         
         tableView = UITableView(frame: self.view.frame)
         tableView.delegate = self
@@ -31,7 +37,15 @@ class MasterViewController: UIViewController,UITableViewDelegate,UITableViewData
         ]
         self.view.addSubview(tableView)
         
+        //refresh bar
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.regenerateModel))
+        self.navigationItem.rightBarButtonItem = barButtonItem
         
+        
+    }
+    
+    @objc func regenerateModel(){
+        model = Model()
     }
     
     func collectionViewFinished() {
